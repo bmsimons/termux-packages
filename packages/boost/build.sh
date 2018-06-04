@@ -15,7 +15,7 @@ termux_step_make_install() {
 	rm $TERMUX_PREFIX/include/boost -rf
 
 	./bootstrap.sh
-	echo "using clang : $TERMUX_ARCH : $CXX : <linkflags>-L/data/data/com.termux/files/usr/lib ; " >> project-config.jam
+	echo "using clang : $TERMUX_ARCH : $CXX : <linkflags>-L/data/data/me.bartsimons.wordpressotg/files/usr/lib ; " >> project-config.jam
 	echo "using python : 3.6 : $TERMUX_PREFIX/bin/python3 : $TERMUX_PREFIX/include/python3.6m : $TERMUX_PREFIX/lib ;" >> project-config.jam
 
 	if [ "$TERMUX_ARCH" = arm ] || [ "$TERMUX_ARCH" = aarch64 ]; then
@@ -33,7 +33,7 @@ termux_step_make_install() {
 	fi
 
 	./b2 target-os=android -j${TERMUX_MAKE_PROCESSES} \
-		include=/data/data/com.termux/files/usr/include \
+		include=/data/data/me.bartsimons.wordpressotg/files/usr/include \
 		toolset=clang-$TERMUX_ARCH \
 		--prefix="$TERMUX_PREFIX"  \
 		-q \
@@ -50,11 +50,11 @@ termux_step_make_install() {
 		install
 
 	./bootstrap.sh --with-libraries=python
-	echo "using clang : $TERMUX_ARCH : $CXX : <linkflags>-L/data/data/com.termux/files/usr/lib ; " >> project-config.jam
+	echo "using clang : $TERMUX_ARCH : $CXX : <linkflags>-L/data/data/me.bartsimons.wordpressotg/files/usr/lib ; " >> project-config.jam
 	echo "using python : 2.7 : $TERMUX_PREFIX/bin/python2 : $TERMUX_PREFIX/include/python2.7 : $TERMUX_PREFIX/lib ;" >> project-config.jam
 
 	./b2 target-os=android -j${TERMUX_MAKE_PROCESSES} \
-		include=/data/data/com.termux/files/usr/include \
+		include=/data/data/me.bartsimons.wordpressotg/files/usr/include \
 		toolset=clang-$TERMUX_ARCH \
 		--stagedir="$TERMUX_PREFIX"  \
 		-q \

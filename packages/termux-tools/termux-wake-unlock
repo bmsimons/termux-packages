@@ -8,6 +8,6 @@ fi
 
 am startservice \
 	--user 0 \
-	-a com.termux.service_wake_unlock \
-	com.termux/com.termux.app.TermuxService \
+	-a me.bartsimons.wordpressotg.service_wake_unlock \
+	me.bartsimons.wordpressotg/me.bartsimons.wordpressotg.app.TermuxService \
 	> /dev/null

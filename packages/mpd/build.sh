@@ -24,7 +24,7 @@ termux_step_pre_configure() {
 	CXXFLAGS+=" -DTERMUX -UANDROID"
 	LDFLAGS+=" -llog -lOpenSLES"
 	NOCONFIGURE=1	./autogen.sh
-	rm -f /data/data/com.termux/files/usr/etc/mpd.conf
+	rm -f /data/data/me.bartsimons.wordpressotg/files/usr/etc/mpd.conf
 }
 
 termux_step_make_install () {
@@ -35,7 +35,7 @@ termux_step_make_install () {
 	#
 	# On Android N also liblzma seems to conflict.
 	make install
-	cp -f $TERMUX_PREFIX/share/doc/mpd/mpdconf.example /data/data/com.termux/files/usr/etc/mpd.conf
+	cp -f $TERMUX_PREFIX/share/doc/mpd/mpdconf.example /data/data/me.bartsimons.wordpressotg/files/usr/etc/mpd.conf
 	mkdir -p $TERMUX_PREFIX/libexec
 	mkdir -p $TERMUX_PREFIX/var/mpd
 	mv $TERMUX_PREFIX/bin/mpd $TERMUX_PREFIX/libexec
